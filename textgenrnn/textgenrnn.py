@@ -13,9 +13,9 @@ import numpy as np
 import json
 import h5py
 from pkg_resources import resource_filename
-from .model import textgenrnn_model
-from .model_training import *
-from .utils import *
+from model import textgenrnn_model
+from model_training import *
+from utils import *
 import csv
 import re
 

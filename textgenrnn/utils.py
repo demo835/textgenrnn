@@ -99,7 +99,8 @@ def textgenrnn_generate(model, vocab,
                 next_temperature,
                 interactive=interactive,
                 top_n=top_n
-            )
+                )
+
             options = [indices_char[idx] for idx in options_index]
             print('Controls:\n\ts: stop.\tx: backspace.\to: write your own.')
             print('\nOptions:')
@@ -244,3 +245,16 @@ class save_model_weights(Callback):
         else:
             self.textgenrnn.model.save_weights(
                 "{}_weights.hdf5".format(self.weights_name))
+
+    def textgenrnn_debug():
+        print("Inside textgenrnn_debug")
+        options_index = textgenrnn_sample(
+                model.predict(encoded_text, batch_size=1)[0],
+                next_temperature,
+                interactive=interactive,
+                top_n=top_n
+                )
+        
+        print("options_index is ", options_index)
+
+        options = [indices_char[idx] for idx in options_index]
