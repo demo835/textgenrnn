@@ -60,7 +60,6 @@ def textgenrnn_model(num_classes, cfg, context_size=None,
 '''
 Create a new LSTM layer per parameters. Unfortunately,
 each combination of parameters must be hardcoded.
-
 The normal LSTMs use sigmoid recurrent activations
 for parity with CuDNNLSTM:
 https://github.com/keras-team/keras/issues/8860
